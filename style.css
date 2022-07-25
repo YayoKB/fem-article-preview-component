@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-greyish-blue: hsl(217, 19%, 35%);
+  --desaturated-dark-blue: hsl(214, 17%, 51%);
+  --greyish-blue: hsl(212, 23%, 69%);
+  --light-greyish-blue: hsl(210, 46%, 95%);
+}
+
+body,
+html {
+  height: 100%;
+  font-family: "Manrope", sans-serif;
+  background-color: var(--light-greyish-blue);
+}
+
+p {
+  font-size: 0.8125rem;
+}
+
+.wrapper {
+  height: 98%;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  max-width: 20rem;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.hero {
+  background-image: url("./images/drawers.jpg");
+  height: 12.5rem;
+  width: 100%;
+  background-size: cover;
+  background-position: left center;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.text {
+  padding: 2rem 2rem 0rem 2rem;
+}
+
+.headline {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--dark-greyish-blue);
+  letter-spacing: 0.1px;
+}
+
+.desc {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--desaturated-dark-blue);
+  letter-spacing: 0.2px;
+  line-height: 1.7;
+  margin-top: 0.75rem;
+}
+
+.author {
+  margin-top: 1.5rem;
+  height: 4rem;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.5s ease;
+}
+
+.avatar {
+  border-radius: 100%;
+  height: 2.5rem;
+}
+
+.author-details {
+  display: grid;
+  row-gap: 0.15rem;
+  letter-spacing: 0.4px;
+  margin-left: 1rem;
+}
+
+.author-name {
+  font-weight: 700;
+  color: var(--dark-greyish-blue);
+}
+
+.date {
+  color: var(--greyish-blue);
+}
+
+.share-icon {
+  background-color: var(--light-greyish-blue);
+  width: 2rem;
+  height: 2rem;
+  background-image: url("./images/icon-share.svg");
+  background-position: 50% 48%;
+  background-repeat: no-repeat;
+  border-radius: 100%;
+  border: none;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.share {
+  background-color: var(--dark-greyish-blue);
+  padding: 1rem 2rem;
+  display: none;
+  align-items: center;
+  flex-direction: row;
+  line-height: 1;
+  border-radius: 0px 0px 10px 10px;
+  margin-top: 1.5rem;
+}
+
+.share-text {
+  text-transform: uppercase;
+  color: var(--greyish-blue);
+  letter-spacing: 5px;
+  margin-right: 0.25rem;
+}
+
+.social-icons img {
+  margin-left: 0.75rem;
+  cursor: pointer;
+}
+
+.shared {
+  background-color: var(--desaturated-dark-blue);
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  border-radius: 100%;
+  margin-left: auto;
+}
+
+.shared-icon {
+  height: 2rem;
+  width: 2rem;
+  mask-image: url("./images/icon-share.svg");
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: auto;
+  background-color: var(--light-greyish-blue);
+  cursor: pointer;
+}
+
+@media screen and (min-width: 900px) {
+  .container {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    max-width: 45.625rem;
+  }
+
+  .hero {
+    height: 100%;
+    border-radius: 10px 0px 0px 10px;
+    grid-row: span 2;
+  }
+
+  .text {
+    padding: 2rem 2.5rem;
+    padding-bottom: 0rem;
+  }
+
+  .headline {
+    font-size: 1.25rem;
+  }
+
+  .author {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    height: auto;
+    padding: 0 2.5rem;
+  }
+
+  .details {
+    position: relative;
+    grid-column: 2;
+  }
+
+  .share {
+    border-radius: 10px;
+    width: 15.625rem;
+    position: absolute;
+    top: -3.5rem;
+    left: 0.5rem;
+    transform: translateX(100%) translateY(-50%);
+    display: none;
+    justify-content: space-evenly;
+  }
+
+  .share-text {
+    margin-right: 0;
+  }
+
+  .social-icons {
+    margin-left: 0;
+  }
+
+  .social-icons img {
+    margin-left: 0.75rem;
+  }
+
+  .shared {
+    display: none;
+  }
+
+  .share-icon:hover .container {
+    background-color: red;
+  }
+  .share::after {
+    content: "";
+    position: absolute;
+    top: 3.4rem;
+    border: 1rem solid transparent;
+    border-top-color: var(--dark-greyish-blue);
+  }
+}
+
+.display-none {
+  display: none;
+}
+
+.display-flex {
+  display: flex;
+}
+
+@media screen and (min-width: 900px) {
+  .author {
+    display: flex;
+  }
+}
