@@ -77,6 +77,10 @@ p {
   transition: opacity 0.5s ease;
 }
 
+.details {
+  position: relative;
+}
+
 .avatar {
   border-radius: 100%;
   height: 2.5rem;
@@ -114,12 +118,21 @@ p {
 .share {
   background-color: var(--dark-greyish-blue);
   padding: 1rem 2rem;
-  display: none;
   align-items: center;
   flex-direction: row;
   line-height: 1;
   border-radius: 0px 0px 10px 10px;
   margin-top: 1.5rem;
+  opacity: 0;
+  transition: opacity 300ms;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+}
+
+.share.show {
+  opacity: 1;
 }
 
 .share-text {
@@ -192,10 +205,9 @@ p {
     border-radius: 10px;
     width: 15.625rem;
     position: absolute;
-    top: -3.5rem;
-    left: 0.5rem;
-    transform: translateX(100%) translateY(-50%);
-    display: none;
+    bottom: 5rem;
+    right: -4.3rem;
+    display: flex;
     justify-content: space-evenly;
   }
 
@@ -215,28 +227,12 @@ p {
     display: none;
   }
 
-  .share-icon:hover .container {
-    background-color: red;
-  }
   .share::after {
     content: "";
     position: absolute;
-    top: 3.4rem;
+    top: 3.35rem;
     border: 1rem solid transparent;
     border-top-color: var(--dark-greyish-blue);
-  }
-}
-
-.display-none {
-  display: none;
-}
-
-.display-flex {
-  display: flex;
-}
-
-@media screen and (min-width: 900px) {
-  .author {
-    display: flex;
+    transform-origin: top center;
   }
 }
